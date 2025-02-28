@@ -1,6 +1,6 @@
-# Nivot
+# nivot
 
-Nivot is a powerful pivot library for Nim that allows you to easily transform, reshape, analyze and visualize your data.
+nivot is a powerful pivot library for Nim that allows you to easily transform, reshape, analyze and visualize your data.
 
 ## Features
 
