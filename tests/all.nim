@@ -166,6 +166,31 @@ suite "Visualization":
     
     check(chart.len > 0)
     check(chart.contains("Sales by Region"))
+    echo "Example BarChart:\n" & chart
+  
+  test "Line chart drawing":
+    # Create a simple dataset for line chart
+    var lineData = newDataTable()
+    lineData.addColumn("X", @["1", "2", "3", "4", "5"])
+    lineData.addColumn("Y", @["2", "5", "3", "8", "6"])
+    
+    # Test default line chart
+    let lineChart = drawLineChart(lineData, "X", "Y")
+    check(lineChart.len > 0)
+    check(lineChart.contains("Y vs X"))
+    check(lineChart.contains("X-axis"))
+    check(lineChart.contains("Y-axis"))
+    echo "Example line chart:\n" & lineChart
+    
+    # Test scatter chart
+    let scatterChart = drawLineChart(lineData, "X", "Y", chartType = Scatter)
+    check(scatterChart.len > 0)
+    check(scatterChart.contains("Y vs X"))
+    check(scatterChart.contains("*"))  # Should contain asterisks for data points
+    
+    # Test error cases
+    let badColChart = drawLineChart(lineData, "NonExistent", "Y")
+    check(badColChart.contains("Error"))
 
 when isMainModule:
   echo "Running Nivot tests..."
