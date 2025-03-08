@@ -199,6 +199,8 @@ proc customAggregation(values: seq[string]): string =
 let pt = dt.pivot("Region", "Product", "Sales", customAggregation)
 ```
 
+Have a look at the tests and run them, to see the output and to have more examples.
+
 ## License
 
 MIT
