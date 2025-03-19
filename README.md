@@ -1,6 +1,7 @@
 # nivot
 
 nivot is a powerful pivot library for Nim that allows you to easily transform, reshape, analyze and visualize your data.
+Note: This project is vibe-coded. :)
 
 ## Features
 
